@@ -107,6 +107,8 @@ function primera_pagina() {
     usarFetch(pagina);
     $primeraPagina.disabled = true;
     $anterior.disabled = true;
+    $ultimaPagina.disabled = false;
+    $siguiente.disabled = false;
     $siguiente.classList.replace('deshabilitar', 'btn');
     $ultimaPagina.classList.replace('deshabilitar', 'btn');
     $primeraPagina.classList.replace('btn', 'deshabilitar');
@@ -130,16 +132,15 @@ function siguientePagina() {
     if (pagina === 42) {
         $siguiente.disabled = true;
         $ultimaPagina.disabled = true;
-        $siguiente.classList.replace('btn', 'deshabilitado');
-        $ultimaPagina.classList.replace('btn', 'deshabilitado');
+        $siguiente.classList.replace('btn', 'deshabilitar');
+        $ultimaPagina.classList.replace('btn', 'deshabilitar');
     } else {
         $siguiente.disabled = false;
         $ultimaPagina.disabled = false;
         $siguiente.classList.replace('deshabilitar', 'btn');
         $ultimaPagina.classList.replace('deshabilitar', 'btn');
-
-    }
-};
+    };
+}
 
 function anteriorPagina() {
     if (pagina > 1) {
@@ -176,10 +177,12 @@ function ultima_Pagina() {
     usarFetch(42);
     $siguiente.disabled = true;
     $ultimaPagina.disabled = true;
-    $siguiente.classList.replace('btn', 'deshabilitar');
-    $ultimaPagina.classList.replace('btn', 'deshabilitar');
+    $primeraPagina.disabled = false;
+    $anterior.disabled = false;
     $anterior.classList.replace('deshabilitar', 'btn');
     $primeraPagina.classList.replace('deshabilitar', 'btn');
+    $siguiente.classList.replace('btn', 'deshabilitar');
+    $ultimaPagina.classList.replace('btn', 'deshabilitar');
 }
 
 
